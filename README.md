@@ -14,6 +14,10 @@ git clone https://github.com/NeuralFalconYT/DH_live.git
 ```bash
 cd DH_live
 ```
+and 
+```
+python make_model.py
+```
 
 #### **Step 3: Create a virtual environment**
 ```bash
@@ -62,6 +66,10 @@ git clone https://github.com/NeuralFalconYT/DH_live.git
 #### **Step 2: Change directory to the project folder**
 ```bash
 cd DH_live
+```
+and 
+```
+python make_model.py
 ```
 
 #### **Step 3: Install the dependencies**
