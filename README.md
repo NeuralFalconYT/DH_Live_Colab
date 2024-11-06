@@ -1,4 +1,6 @@
-# Run DH_live on Google Colab
+# Run DH_live on Google Colab 
+#### (only works for small videos, and to get good lip sync, you need to train the model. We need to write code for chunk processing to prevent crashing the RAM).
+#### To train with your own anchor, visit [DH_live_webui](https://github.com/v3ucn/DH_live_webui)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/NeuralFalconYT/DH_Live_Colab/blob/main/DH_live-Colab.ipynb)<br>
 ![a](https://github.com/user-attachments/assets/aa310fd4-4e30-4112-9443-3dd6ac4ce284)
 
