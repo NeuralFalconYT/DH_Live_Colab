@@ -6,8 +6,6 @@
 ```
 git clone https://github.com/NeuralFalconYT/DH_live.git
 ```
-or git clone https://github.com/kleinlee/DH_live.git
-
 ```
 cd DH_live
 ```
