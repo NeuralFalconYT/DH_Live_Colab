@@ -1,7 +1,6 @@
 base_path="."
 
 import os
-from IPython.display import clear_output
 
 def auto_install():
     global base_path
@@ -25,8 +24,7 @@ def auto_install():
     # Decompress the gzipped file
     os.system(f"gzip -d -c {os.path.join(checkpoint_path, 'render.pth.gz')} > {os.path.join(checkpoint_path, 'render.pth')}")
     
-    # Clear output (for Jupyter or IPython environments)
-    clear_output()
+
 
 # Run the installation process
 auto_install()
@@ -168,9 +166,13 @@ def gradio_call(input_video, input_audio):
 @click.option("--debug", is_flag=True, default=False, help="Enable debug mode.")
 @click.option("--share", is_flag=True, default=False, help="Enable sharing of the interface.")
 def main(debug, share):
+    credit_markdown = """
+    ## Credit:
+    [DH_live](https://github.com/kleinlee/DH_live)
+    """
     # Example inputs for Gradio interface
-    demo_examples = [[f"{base_path}/video_data/demo.mp4", f"{base_path}/video_data/audio0.wav"]]
-
+    demo_examples = [[f"{base_path}/DH_live/video_data/demo.mp4", f"{base_path}/DH_live/video_data/audio0.wav"]]
+    
     # Define Gradio inputs and outputs
     gradio_inputs = [
         gr.File(label="Upload Video", type="filepath"),
@@ -181,10 +183,10 @@ def main(debug, share):
 
     # Define and configure the Gradio interface
     demo = gr.Interface(fn=gradio_call, inputs=gradio_inputs, outputs=gradio_outputs,
-                        title="DH_live LipSync Base Model",examples=demo_examples)
+                        title="DH_live LipSync Base Model",examples=demo_examples,
+                        description=credit_markdown)
 
-    demo.queue().launch(allowed_paths=[f"{base_path}/result"],debug=debug, share=share)
+    demo.queue().launch(allowed_paths=[f"{base_path}/DH_live/result"],debug=debug, share=share)
 
 if __name__ == "__main__":
     main()
-
