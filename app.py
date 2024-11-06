@@ -136,7 +136,10 @@ def gradio_call(input_video, input_audio):
 def main(debug, share):
     # Example inputs for Gradio interface
     demo_examples = [[f"{base_path}/video_data/demo.mp4", f"{base_path}/video_data/audio0.wav"]]
-
+    credit_markdown = """
+    ### Credit:
+    [DH_live](https://github.com/kleinlee/DH_live)
+    """
     # Define Gradio inputs and outputs
     gradio_inputs = [
         gr.File(label="Upload Video", type="filepath"),
@@ -147,7 +150,8 @@ def main(debug, share):
 
     # Define and configure the Gradio interface
     demo = gr.Interface(fn=gradio_call, inputs=gradio_inputs, outputs=gradio_outputs,
-                        title="DH_live LipSync Base Model",examples=demo_examples)
+                        title="DH_live LipSync Base Model",examples=demo_examples,
+                        description=credit_markdown)
 
     demo.queue().launch(allowed_paths=[f"{base_path}/result"],debug=debug, share=share)
 
