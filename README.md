@@ -12,20 +12,10 @@ or git clone https://github.com/kleinlee/DH_live.git
 cd DH_live
 ```
 ```
-curl -L -o app.py https://raw.githubusercontent.com/NeuralFalconYT/DH_Live_Colab/refs/heads/main/app.py
-```
-```
-curl -L -o make_model.py https://raw.githubusercontent.com/NeuralFalconYT/DH_Live_Colab/refs/heads/main/make_model.py
-```
-```
-curl -L -o colab_requirements.txt https://raw.githubusercontent.com/NeuralFalconYT/DH_Live_Colab/refs/heads/main/colab_requirements.txt
-```
-
-```
 python make_model.py
 ```
 ```
-pip install -r colab_requirements.txt
+pip install -r requirements.txt
 ```
 ```
 python app.py --debug
